@@ -13,7 +13,7 @@ playerRouter.get('/player/:id', )
 
 playerRouter.post('/player',);
 
-playerRouter.put('/player',);
+playerRouter.put('/player/:id',);
 
 playerRouter.delete('/player/:id',)
 
