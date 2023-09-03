@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+#Ignorar senha do banco de dados
+.env
+
 # User-specific files
 *.rsuser
 *.suo
