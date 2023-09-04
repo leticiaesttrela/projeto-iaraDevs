@@ -1,7 +1,5 @@
-import { server} from "./server/Server";
-import { playerRouter } from "./server/routes/playersRoutes";
-
-
+import { server} from "./Server";
+import { playerRouter } from "./routes/playersRoutes";
 
 server.listen(3333, () => {
     console.log('Servidor rodando na porta 3333');

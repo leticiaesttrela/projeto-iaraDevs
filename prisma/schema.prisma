@@ -31,6 +31,8 @@ model Campeonato{
  nome        String
  dataInicio  DateTime 
  dataFim     DateTime 
+ Time        Time?    @relation(fields: [timeId], references: [id])
+ timeId      Int?
    
   @@map("campeonatos") 
 }
