@@ -76,3 +76,5 @@ export const deletePlayer = async (request, response) => {
         return response.status(500).json(e.message);
     }
 }
+
+export default {getPlayers, getPlayer, createPlayer, updatePlayer, deletePlayer};
