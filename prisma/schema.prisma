@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Jogador {
+model Players {
   id         String   @id @default(uuid())
   nome       String
   idade      Decimal
@@ -18,7 +18,7 @@ model Jogador {
   @@map("jogadores")
 }
 
-model Time {
+model Teams {
   id         String   @id @default(uuid())
   nome       String
   fundacao   DateTime 
@@ -26,13 +26,13 @@ model Time {
   @@map("times")
 }
 
-model Campeonato{
+model Championships{
  id          String   @id @default(uuid())
  nome        String
  dataInicio  DateTime 
  dataFim     DateTime 
- Time        Time?    @relation(fields: [timeId], references: [id])
- timeId      Int?
+//  Time        Time?    @relation(fields: [timeId], references: [id])
+//  timeId      Int?
    
   @@map("campeonatos") 
 }
