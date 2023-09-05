@@ -1,6 +1,5 @@
 import { Router } from "express";
-
-
+import { createPlayer } from "../../../controllers/playersController";
 
 const playerRouter = Router();
 
@@ -11,7 +10,7 @@ playerRouter.get('/players', (req, res) => {
 
 playerRouter.get('/player/:id', )
 
-playerRouter.post('/player',);
+playerRouter.post('/player', createPlayer);
 
 playerRouter.put('/player/:id',);
 
