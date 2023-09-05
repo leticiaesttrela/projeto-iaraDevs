@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createChampionships, deleteChampionships, getChampionships, getChampionships, updateChampionships} from "../../controllers/championshipsController";
+import { createChampionships, deleteChampionships, getChampionships, getChampionships, updateChampionships} from "../controllers/championshipsController";
 
 const router = Router();
 
