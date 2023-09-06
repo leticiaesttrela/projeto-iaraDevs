@@ -3,7 +3,7 @@ As ferramentas utilizadas na construção desta API incluem o Express, Prisma, N
 
 Para instalar as dependências necessárias, recomenda-se a utilização dos comandos "npm install" ou "npm i".
 
-É importante criar um arquivo .env e substituir as informações do seu banco, incluindo PG_HOST, PG_PORT, PG_USERNAME, PG_PASSWORD, PG_DATABASE e API_PORT.
+É importante criar um arquivo .env e substituir as informações do seu banco, incluindo PORT=, DATABASE_URL=.
 
 Após a inicialização do servidor, é necessário abrir o arquivo index.html para visualizar o projeto.
 # Equipe: 
