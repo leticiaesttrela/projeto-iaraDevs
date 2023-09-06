@@ -4,4 +4,3 @@ Curso de Desenvolvimento Full Stack Básico
 Diogo Santana Freitas </br>
 Letícia Estrela Duarte </br>
 Pietra Almeida S. Costa </br>
-Thawan de Souza Texeira </br>

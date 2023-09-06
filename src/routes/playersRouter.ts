@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getPlayers, createPlayer, getPlayer, updatePlayer, deletePlayer } from "../../../controllers/playersController";
+import { getPlayers, createPlayer, getPlayer, updatePlayer, deletePlayer } from "../controllers/playersController";
 
 
 const playerRouter = Router();

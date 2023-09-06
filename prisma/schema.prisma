@@ -21,7 +21,7 @@ model Players {
 model Teams {
   id         String   @id @default(uuid())
   nome       String
-  fundacao   DateTime 
+  fundacao   DateTime @db.Date
    
   @@map("times")
 }
@@ -31,8 +31,8 @@ model Championships{
  nome        String
  dataInicio  DateTime 
  dataFim     DateTime 
- Time        Teams?    @relation(fields: [timeId], references: [id])
- timeId      Int?
+//  Time        Time?    @relation(fields: [timeId], references: [id])
+//  timeId      Int?
    
   @@map("campeonatos") 
 }
