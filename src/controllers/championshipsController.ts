@@ -1,47 +1,48 @@
-import { prismaClient } from "../database/prisma-client-js.js";
+import { prismaClient } from "../database/prisma-client";
+import { Request, Response } from "express";
 
 
-export async function getChampionships(request, response) {
+export async function getChampionships(request: Request, response:Response) {
     try {
         const championships = await prismaClient.championships.findMany();
         response.status(200).json(championships);
-    } catch (e) {
-        return response.status(500).send(e.message);
+    } catch (err) {
+        return response.status(500).send({err});
     }
 }
 
-export const getChampionships = async (request, response) => {
+export const getChampionship = async (request: Request, response:Response) => {
     try {
         let idParams = request.params.id;
         const championships = await prismaClient.championships.findUnique({
             where: { id:idParams },
           })
         response.status(200).json(championships);
-    } catch (e) {
-        return response.status(500).send(e.message);
+    } catch (err) {
+        return response.status(500).send({err});
     }
 }
 
-export const createChampionships = async (request, response) => {
+export const createChampionship = async (request: Request, response:Response) => {
     try {
-        const { nome, data_inicio, data_fim } = request.body;
+        const { nome, dataInicio, dataFim } = request.body;
 
         const championships = await prismaClient.championships.create({
             data: {
                 nome,
-                data_inicio,
-                data_fim,
+                dataInicio,
+                dataFim,
             },
         });
 
         return response.status(201).json(championships);
     }
-    catch (e) {
-        return response.status(500).send(e.message);
+    catch (err) {
+        return response.status(500).send({err});
     }
 }
 
-export const updateChampionships = async (request, response) => {
+export const updateChampionship = async (request: Request, response:Response) => {
     try {
         const championships = await prismaClient.championships.findUnique({ where: { id: request.params.id } });
         if (!championships) {
@@ -54,12 +55,12 @@ export const updateChampionships = async (request, response) => {
             data: request.body
         });
         return response.status(200).json(updatedChampionships)
-    } catch (e) {
-        return response.status(500).send(e.message);
+    } catch (err) {
+        return response.status(500).send({err});
     }
 }
 
-export const deleteChampionships = async (request, response) => {
+export const deleteChampionship = async (request: Request, response:Response) => {
     try {
         const championships = await prismaClient.championships.findUnique({ where: { id: request.params.id } });
         if (!championships) {
@@ -73,8 +74,7 @@ export const deleteChampionships = async (request, response) => {
         })
         return response.status(200).json(deletedChampionships);
 
-    } catch (e) {
-        return response.status(500).json(e.message);
+    } catch (err) {
+        return response.status(500).json({err});
     }
 }
-export default { getChampionships, createChampionships, updateChampionships, deleteChampionships };

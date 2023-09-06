@@ -1,21 +1,21 @@
 import { Router } from "express";
+import { createChampionship, updateChampionship, getChampionship, getChampionships, deleteChampionship } 
+from "../../../controllers/championshipsController";
 
 
 
 const championshipRouter = Router();
 
 
-championshipRouter.get('/championships', (req, res) => {
-        res.send('jogadores');
-})
+championshipRouter.get('/championships', getChampionships)
 
-championshipRouter.get('/championship/:id', )
+championshipRouter.get('/championship/:id', getChampionship )
 
-championshipRouter.post('/championship',);
+championshipRouter.post('/championship', createChampionship);
 
-championshipRouter.put('/championship/:id',);
+championshipRouter.put('/championship/:id', updateChampionship);
 
-championshipRouter.delete('/championship/:id',)
+championshipRouter.delete('/championship/:id', deleteChampionship);
 
 
 export {championshipRouter}
