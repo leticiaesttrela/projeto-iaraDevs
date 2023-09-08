@@ -14,25 +14,43 @@ model Players {
   id         String   @id @default(uuid())
   nome       String
   idade      Decimal
-   
+  timeId     String
+  time       Teams    @relation(fields: [timeId], references: [id])
+
   @@map("jogadores")
 }
 
+
+model Championships {
+  id          String       @id @default(uuid())
+  nome        String
+  dataInicio  DateTime
+  dataFim     DateTime
+
+  campeonatosTimes ChampionshipsTeams[]
+   
+  @@map("campeonatos")
+}
+
 model Teams {
-  id         String   @id @default(uuid())
+  id         String     @id @default(uuid())
   nome       String
-  fundacao   DateTime @db.Date
+  fundacao   DateTime   @db.Date
+  jogadores  Players[]
+
+  campeonatosTimes ChampionshipsTeams[]
    
   @@map("times")
 }
 
-model Championships{
- id          String   @id @default(uuid())
- nome        String
- dataInicio  DateTime 
- dataFim     DateTime 
-//  Time        Time?    @relation(fields: [timeId], references: [id])
-//  timeId      Int?
-   
-  @@map("campeonatos") 
+model ChampionshipsTeams {
+  id            String     @id @default(uuid())
+  campeonato    Championships @relation(fields: [idCampeonato], references: [id])
+  idCampeonato  String
+  time          Teams     @relation(fields: [idTime], references: [id])
+  idTime        String
+
+  @@map("campeonatosTimes")
 }
+
+
