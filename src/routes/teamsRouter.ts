@@ -5,15 +5,15 @@ import { getTeams, getTeam, createTeam, deleteTeam, updateTeam } from "../contro
 const teamRouter = Router();
 
 
-teamRouter.get('/teams', getTeams)
+teamRouter.get('/times', getTeams)
 
-teamRouter.get('/team/:id', getTeam);
+teamRouter.get('/time/:id', getTeam);
 
-teamRouter.post('/team', createTeam);
+teamRouter.post('/time', createTeam);
 
-teamRouter.put('/team/:id', updateTeam);
+teamRouter.put('/time/:id', updateTeam);
 
-teamRouter.delete('/team/:id', deleteTeam);
+teamRouter.delete('/time/:id', deleteTeam);
 
 
 export {teamRouter}

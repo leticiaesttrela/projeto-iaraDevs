@@ -4,7 +4,7 @@ import { getChampionship, getChampionships, createChampionship, updateChampionsh
 const championshipsRouter = Router();
 
 //vizualização de todos os campeonatos
-championshipsRouter.get("/campeonatos", getChampionships);
+championshipsRouter.get("/campeonatos",  getChampionships);
 
 //vizualização de um campeonato por id
 championshipsRouter.get("/campeonato/:id", getChampionship);

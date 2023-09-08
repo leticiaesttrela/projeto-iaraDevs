@@ -4,15 +4,15 @@ import { getPlayers, createPlayer, getPlayer, updatePlayer, deletePlayer } from 
 
 const playerRouter = Router();
 
-playerRouter.get('/players', getPlayers)
+playerRouter.get('/jogadores', getPlayers)
 
-playerRouter.get('/player/:id', getPlayer)
+playerRouter.get('/jogador/:id', getPlayer)
 
-playerRouter.post('/player', createPlayer);
+playerRouter.post('/jogador', createPlayer);
 
-playerRouter.put('/player/:id', updatePlayer);
+playerRouter.put('/jogador/:id', updatePlayer);
 
-playerRouter.delete('/player/:id', deletePlayer)
+playerRouter.delete('/jogador/:id', deletePlayer)
 
 
 export {playerRouter}
