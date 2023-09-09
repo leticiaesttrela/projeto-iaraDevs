@@ -13,7 +13,7 @@ datasource db {
 model Players {
   id         String   @id @default(uuid())
   nome       String
-  idade      Decimal
+  idade      Int
   timeId     String
   time       Teams    @relation(fields: [timeId], references: [id])
 
