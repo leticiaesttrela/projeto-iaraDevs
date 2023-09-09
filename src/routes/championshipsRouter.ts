@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { getChampionship, getChampionships, createChampionship, updateChampionship, deleteChampionship  } from '../controllers/championshipsController';
+import { championshipBodyValidator } from '../shared/middlewares/championshipBodyValidation';
 
 const championshipsRouter = Router();
 
@@ -10,7 +11,7 @@ championshipsRouter.get("/campeonatos",  getChampionships);
 championshipsRouter.get("/campeonato/:id", getChampionship);
 
 //criação de um campeonato
-championshipsRouter.post("/campeonato", createChampionship);
+championshipsRouter.post("/campeonato", championshipBodyValidator, createChampionship);
 
 //atualização de um campeonato
 championshipsRouter.put("/campeonato/:id", updateChampionship);
