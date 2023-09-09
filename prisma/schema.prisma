@@ -24,8 +24,8 @@ model Players {
 model Championships {
   id          String       @id @default(uuid())
   nome        String
-  dataInicio  DateTime
-  dataFim     DateTime
+  dataInicio  DateTime     @db.Date
+  dataFim     DateTime     @db.Date
 
   campeonatosTimes ChampionshipsTeams[]
    
