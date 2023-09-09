@@ -170,9 +170,9 @@ Agradecemos ao  [Atlântico Avanti](https://edu.atlanticoavanti.com.br/portal/ho
 
 
 # Equipe Iara Devs: 
-Diogo Santana Freitas 
-Letícia Estrela Duarte 
-Pietra Almeida S. Costa
+Diogo Santana Freitas </br> 
+Letícia Estrela Duarte </br>
+Pietra Almeida S. Costa</br>
 
 ## contatos Diogo Santana Freitas :
 <div> 
