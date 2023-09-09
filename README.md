@@ -166,7 +166,7 @@ Tivemos a oportunidade de aprender e aplicar várias habilidades e conceitos imp
 - Licenciamento de Código Aberto: Adicionar uma licença de código aberto ao projeto para definir os termos de uso e distribuição do software. Isso é crucial para promover a colaboração e o compartilhamento de código.
 
 ### Agradecimentos
-Agradecemos ao  [Atlântico Avanti](https://edu.atlanticoavanti.com.br/portal/home/ "Site do Atlântico Avanti"), pela oportunidade de participar do Bootcamp através de bolsa de estudos, pelo investimento em nosso crescimento profissional, ao professor [Germanno Teles] e à monitora [Jheyele Raquel] por todo conhecimento passado através de uma excelente didática e pela disposição em sempre ajudar, mesmo fora dos horários das aulas. Suas orientações, conhecimentos e apoio foram fundamentais para o sucesso deste projeto. 
+Agradecemos ao  [Atlântico Avanti](https://edu.atlanticoavanti.com.br/portal/home/ "Site do Atlântico Avanti"), pela oportunidade de participar do Bootcamp através de bolsa de estudos, pelo investimento em nosso crescimento profissional, ao professor <font color=\"green\">**Germanno Teles**</font> e à monitora <font color=\"green\">**Jheyele Raquel**</font> por todo conhecimento passado através de uma excelente didática e pela disposição em sempre ajudar, mesmo fora dos horários das aulas. Suas orientações, conhecimentos e apoio foram fundamentais para o sucesso deste projeto. 
 
 
 # Equipe Iara Devs: 
