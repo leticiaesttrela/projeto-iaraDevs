@@ -15,6 +15,7 @@ model Players {
   nome       String
   idade      Int
   timeId     String
+  position   String
   time       Teams    @relation(fields: [timeId], references: [id])
 
   @@map("jogadores")

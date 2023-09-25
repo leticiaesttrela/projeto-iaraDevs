@@ -24,7 +24,7 @@ export const getPlayer = async (request:Request, response:Response) => {
 
 export const createPlayer = async (request: Request, response: Response) => {
     try {
-        const { nome, idade, timeId} = request.body;
+        const { nome, idade, timeId, position} = request.body;
 
         const player = await prismaClient.players.create({
             data: {
