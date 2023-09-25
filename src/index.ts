@@ -3,10 +3,15 @@ import { championshipsRouter } from "./routes/championshipsRouter";
 import 'dotenv/config'
 import { playerRouter } from "./routes/playersRouter";
 import { teamRouter } from "./routes/teamsRouter";
+import cors from 'cors';
+
+server.use(cors());
 
 server.listen(process.env.PORT || 5000, () => {
     console.log('Servidor rodando na porta 3333');
 })
+
+  
 
 server.use(playerRouter);
 server.use(championshipsRouter);
