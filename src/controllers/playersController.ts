@@ -4,6 +4,7 @@ import { Request, Response } from "express";
 export async function getPlayers(request: Request, response: Response) {
     try {
         const players = await prismaClient.players.findMany();
+        console.log(players)
         response.status(200).json(players);
     } catch (err) {
         return response.status(500).send({err});
@@ -73,6 +74,24 @@ export const deletePlayer = async (request:Request, response:Response) => {
         })
         return response.status(200).json(deletedPlayer);
 
+    } catch (err) {
+        return response.status(500).json({err});
+    }
+}
+
+export const getPlayersByTeam = async (request:Request, response:Response) => {
+
+    console.log(request.params.id)
+    try {
+       const players = await prismaClient.players.findMany({
+            where: {
+                timeId: request.params.id
+            }
+       })
+        if (!players) {
+            return response.status(404).json({ err: 'Não há jogadores cadastrados nesse time' });
+        }
+        return response.status(200).json(players);
     } catch (err) {
         return response.status(500).json({err});
     }
