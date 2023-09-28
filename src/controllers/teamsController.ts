@@ -61,19 +61,23 @@ export const updateTeam = async (request: Request, response:Response) => {
 
 export const deleteTeam = async (request: Request, response:Response) => {
     try {
-        const team = await prismaClient.teams.findUnique({ where: { id: request.params.id } });
-        if (!team) {
-            return response.status(404).json({ err: 'Time não excluido!' });
-        }
-
+        const deletedFromTeamsChampionsships = await prismaClient.championshipsTeams.deleteMany({
+            where: {
+                idTime: request.params.id
+            }
+        })
         const deletedteam = await prismaClient.teams.delete({
             where: {
                 id: request.params.id
             }
         })
+
+
+        console.log(deletedFromTeamsChampionsships);
         return response.status(200).json(deletedteam);
 
     } catch (err) {
         return response.status(500).json({err});
     }
 }
+
