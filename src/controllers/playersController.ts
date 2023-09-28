@@ -4,7 +4,6 @@ import { Request, Response } from "express";
 export async function getPlayers(request: Request, response: Response) {
     try {
         const players = await prismaClient.players.findMany();
-        console.log(players)
         response.status(200).json(players);
     } catch (err) {
         return response.status(500).send({err});
@@ -32,6 +31,7 @@ export const createPlayer = async (request: Request, response: Response) => {
                 nome,
                 idade,
                 timeId,
+                position
             },
         });
 

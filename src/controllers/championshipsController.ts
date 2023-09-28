@@ -72,9 +72,51 @@ export const deleteChampionship = async (request: Request, response:Response) =>
                 id: request.params.id
             }
         })
+
         return response.status(200).json(deletedChampionships);
 
     } catch (err) {
         return response.status(500).json({err});
+    }
+}
+
+export const createTeamsByChampionship  = async (request: Request, response: Response) => {
+    
+    const {teamId, championshipId} = request.body;
+
+    try {
+        const championshipsTeams = await prismaClient.championshipsTeams.create({
+            data: {
+              campeonato: {
+                connect: {
+                    id: championshipId
+                },
+              },
+              time: {
+                connect: {
+                  id: teamId
+                },
+              },
+            },
+        })
+        response.status(201).send(championshipsTeams);
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export const getTeamsByChampionship = async   (request: Request, response: Response) => {
+    
+    const id = request.params.id;
+
+    try {
+        const championshipsTeams = await prismaClient.championshipsTeams.findMany({
+            where: {
+                idCampeonato: id
+            }
+        })
+        response.status(201).send(championshipsTeams);
+    } catch (err) {
+        console.log(err);
     }
 }

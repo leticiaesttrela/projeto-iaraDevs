@@ -16,7 +16,7 @@ model Players {
   idade      Int
   timeId     String
   position   String
-  time       Teams    @relation(fields: [timeId], references: [id])
+  time       Teams    @relation(fields: [timeId], references: [id], onDelete: Cascade)
 
   @@map("jogadores")
 }
@@ -48,7 +48,7 @@ model ChampionshipsTeams {
   id            String     @id @default(uuid())
   campeonato    Championships @relation(fields: [idCampeonato], references: [id])
   idCampeonato  String
-  time          Teams     @relation(fields: [idTime], references: [id])
+  time          Teams?     @relation(fields: [idTime], references: [id], onDelete: Cascade)
   idTime        String
 
   @@map("campeonatosTimes")
